@@ -1,4 +1,4 @@
-# buzzline-04-case
+# buzzline-04-valenti
 
 We can analyze and visualize different types of streaming data as the information arrives.
 
@@ -11,7 +11,6 @@ It generates three applications:
 
 1. A basic producer and consumer that exchange information via a dynamically updated file. 
 2. A JSON producer and consumer that exchange information via a Kafka topic. 
-3. A CSV producer and consumer that exchange information via a different Kafka topic. 
 
 All three applications produce live charts to illustrate the data. 
 
@@ -66,14 +65,10 @@ Windows:
 
 ```shell
 .venv\Scripts\activate
-py -m producers.basic_json_producer_case
+py -m producers.basic_json_producer_valenti
 ```
 
-Mac/Linux:
-```zsh
-source .venv/bin/activate
-python3 -m producers.basic_json_producer_case
-```
+
 
 ### Consumer Terminal
 
@@ -85,13 +80,7 @@ Use the commands below to activate .venv, and start the consumer.
 Windows:
 ```shell
 .venv\Scripts\activate
-py -m consumers.basic_json_consumer_case
-```
-
-Mac/Linux:
-```zsh
-source .venv/bin/activate
-python3 -m consumers.basic_json_consumer_case
+py -m consumers.basic_json_consumer_valenti
 ```
 
 ### Review the Application Code
@@ -134,37 +123,6 @@ What new functions/features must be added to work with a Kafka-based streaming s
 
 When done, remember to kill the associated terminals for the producer and consumer. 
 
----
-
-## Task 7. Start a (Kafka-based) CSV Streaming Application
-
-This will take two terminals:
-
-1. One to run the producer which writes to a Kafka topic. 
-2. Another to run the consumer which reads from that Kafka topic.
-
-For each one, you will need to: 
-1. Open a new terminal. 
-2. Activate your .venv.
-3. Know the command that works on your machine to execute python (e.g. py or python3).
-4. Know how to use the -m (module flag to run your file as a module).
-5. Know the full name of the module you want to run. 
-   - Look in the producers folder for csv_producer_case.
-   - Look in the consumers folder for csv_consumer_case.
-
-### Review the Application Code
-
-Review the code for both the producer and the consumer. 
-Understand how the information is generated and written to a Kafka topic, and consumed from the topic and processed. 
-Review the visualization code to see how the live chart is produced. 
-
-Compare the JSON application to the CSV streaming application.
-By organizing code into reusable functions, which functions can be reused? 
-Which functions must be updated based on the type of data?
-How does the visualization code get changed based on the type of data and type of chart used?
-Which aspects are similar between the different types of data? 
-
-When done, remember to kill the associated terminals for the producer and consumer. 
 
 ---
 
