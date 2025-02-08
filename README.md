@@ -7,12 +7,11 @@ The consumers have been enhanced to add visualization.
 
 This project uses matplotlib and its animation capabilities for visualization. 
 
-It generates three applications:
+It generates one application:
 
-1. A basic producer and consumer that exchange information via a dynamically updated file. 
-2. A JSON producer and consumer that exchange information via a Kafka topic. 
+1. A JSON producer and consumer that exchange information via a Kafka topic. 
 
-All three applications produce live charts to illustrate the data. 
+The application will illustrate from a file named data.simpsons.json which Simpsons character has the most memorable quotations that season by counting the character's message for that season. 
 
 ## Task 1. Use Tools from Module 1 and 2
 
@@ -23,7 +22,7 @@ Python 3.11 is required.
 
 Once the tools are installed, copy/fork this project into your GitHub account
 and create your own version of this project to run and experiment with. 
-Follow the instructions in [FORK-THIS-REPO.md](https://github.com/denisecase/buzzline-01-case/docs/FORK-THIS-REPO.md).
+Follow the instructions in [FORK-THIS-REPO.md](https://github.com/josephvalenti53/buzzline-04-valenti/FORK-THIS-REPO.md).
 
 OR: For more practice, add these example scripts or features to your earlier project. 
 You'll want to check requirements.txt, .env, and the consumers, producers, and util folders. 
@@ -65,7 +64,7 @@ Windows:
 
 ```shell
 .venv\Scripts\activate
-py -m producers.basic_json_producer_valenti
+py -m producers.project_producer_valenti
 ```
 
 
@@ -80,7 +79,7 @@ Use the commands below to activate .venv, and start the consumer.
 Windows:
 ```shell
 .venv\Scripts\activate
-py -m consumers.basic_json_consumer_valenti
+py -m consumers.project_consumer_valenti
 ```
 
 ### Review the Application Code
@@ -90,24 +89,6 @@ Understand how the information is generated, written to a file, and read and pro
 Review the visualization code to see how the live chart is produced. 
 When done, remember to kill the associated terminals for the producer and consumer. 
 
-
----
-
-## Task 6. Start a (Kafka-based) JSON Streaming Application
-
-This will take two terminals:
-
-1. One to run the producer which writes to a Kafka topic. 
-2. Another to run the consumer which reads from that Kafka topic.
-
-For each one, you will need to: 
-1. Open a new terminal. 
-2. Activate your .venv.
-3. Know the command that works on your machine to execute python (e.g. py or python3).
-4. Know how to use the -m (module flag to run your file as a module).
-5. Know the full name of the module you want to run. 
-   - Look in the producers folder for json_producer_case.
-   - Look in the consumers folder for json_consumer_case.
 
 
 ### Review the Application Code
