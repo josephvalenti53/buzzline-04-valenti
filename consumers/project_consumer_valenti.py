@@ -43,23 +43,26 @@ def update_chart():
     """Update the live chart with the latest counts."""
     ax.clear()
 
+    # Sort the seasons numerically
+    sorted_seasons = sorted(season_counts.keys(), key=int)
+    
     # Extract the seasons and their counts
-    seasons = list(season_counts.keys())
-    bottom_counts = [0] * len(seasons)
+    bottom_counts = [0] * len(sorted_seasons)
     bars = []
 
     # For each author, create a stacked bar segment
     for author, color in author_colors.items():
-        author_message_counts = [season_counts[season].get(author, 0) for season in seasons]
-        bars.append(ax.bar(seasons, author_message_counts, bottom=bottom_counts, color=color, label=author))
+        author_message_counts = [season_counts[season].get(author, 0) for season in sorted_seasons]
+        bars.append(ax.bar(sorted_seasons, author_message_counts, bottom=bottom_counts, color=color, label=author))
         bottom_counts = [bottom + count for bottom, count in zip(bottom_counts, author_message_counts)]
 
     ax.set_xlabel("Seasons")
     ax.set_ylabel("Message Counts")
-    ax.set_title("Message Counts by Season and Author")
+    ax.set_title("The Simpsons Star of the Season")
 
-    # Rotate season labels if needed
-    ax.set_xticklabels(seasons, rotation=45, ha="right")
+    # Set x-axis to show seasons in correct order
+    ax.set_xticks(sorted_seasons)  # Ensure correct x-tick positions
+    ax.set_xticklabels(sorted_seasons, rotation=45, ha="right")
 
     # Add a legend
     ax.legend()
